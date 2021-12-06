@@ -71,5 +71,6 @@ public class Enemy1Controller : MonoBehaviour
     {
         broken = false;
         rigidbody2D.simulated = false;
+        animator.SetTrigger("Fixed");
     }
 }
