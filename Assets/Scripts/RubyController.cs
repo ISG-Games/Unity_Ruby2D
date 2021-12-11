@@ -22,6 +22,8 @@ public class RubyController : MonoBehaviour
     Animator animator;
     Vector2 lookDirection = new Vector2(1,0);
 
+    public ParticleSystem particlesDaño;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +76,7 @@ public class RubyController : MonoBehaviour
         {
             if (isInvincible){
                 return;}
-            
+            Instantiate(particlesDaño, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
             isInvincible = true;
             invincibleTimer = timeInvincible;
             animator.SetTrigger("Hit");
